@@ -1,10 +1,10 @@
 package org.example;
 
+import org.json.JSONPropertyName;
+
 public class User {
 
     private String name;
-
-
     private String job;
 
     public String getName() {

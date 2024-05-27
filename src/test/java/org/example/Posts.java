@@ -44,8 +44,8 @@ public class Posts {
     @Test(priority = 1)
     public void createUserPojo() {
         User user = new User();
-        user.setName("pojo");
-        user.setJob("pojo");
+        user.setName("pojo-it");
+        user.setJob("job-it");
         RestAssured.baseURI = "https://reqres.in";
         given().contentType("application/json").log().uri()
                 .body(user)

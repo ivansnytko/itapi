@@ -17,17 +17,22 @@ public class Serialization {
         User user = new User();
         user.setName("pojo");
         user.setJob("pojo");
+
         ObjectMapper objectMapper = new ObjectMapper();
+
         String json = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(user);
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/test/resources/pojo.json"), user);
-        User user2 = objectMapper.readValue(json, User.class);
+//        System.out.println(json);
+
+
+//        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("src/test/resources/it.json"), user);
+        User user2 = objectMapper.readValue(new File("src/test/resources/it.json"), User.class);
         System.out.println(user2.getName());
-        RestAssured.baseURI = "https://reqres.in";
-        given().contentType("application/json").log().uri()
-                .body(user)
-                .when().post("/api/users")
-                .then().statusCode(201).log().all()
-                .header("Content-Type", "application/json; charset=utf-8");
+//        RestAssured.baseURI = "https://reqres.in";
+//        given().contentType("application/json").log().uri()
+//                .body(user)
+//                .when().post("/api/users")
+//                .then().statusCode(201).log().all()
+//                .header("Content-Type", "application/json; charset=utf-8");
     }
 
 }
